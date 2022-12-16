@@ -1,0 +1,26 @@
+{
+  "extends": "nx/presets/npm.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "main",
+  "npmScope": "@giveerr",
+  "namedInputs": {
+    "default": ["{projectRoot}/src"],
+    "dist": ["{projectRoot}/dist", "{projectRoot}/index.js"]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["{projectRoot}/**/*", "{workspaceRoot}/scripts/build.sh"],
+      "outputs": ["{projectRoot}/dist", "{projectRoot}/index.js"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "parallel": 10,
+        "cacheableOperations": ["build"]
+      }
+    }
+  }
+}

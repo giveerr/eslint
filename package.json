@@ -1,0 +1,40 @@
+{
+  "name": "@giveerr/eslint",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
+  "scripts": {
+    "affected": "nx affected --target=build --parallel 10",
+    "build": "nx run-many --target=build --parallel 10",
+    "clean": "nx run-many --target=clean --parallel 10",
+    "fix": "npm-run-all prettier eslint",
+    "eslint": "eslint --fix .",
+    "prettier": "prettier --loglevel warn --write .",
+    "prepare": "is-ci || husky install"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix",
+    "package.json": "npx sort-package-json"
+  },
+  "prettier": "@giveerr/prettier-config",
+  "devDependencies": {
+    "@giveerr/eslint-config": "*",
+    "@giveerr/eslint-config-prettier-typescript": "*",
+    "@types/node": "^18.11.11",
+    "eslint": "^8.29.0",
+    "husky": "^8.0.2",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.1.0",
+    "npm-run-all": "^4.1.5",
+    "nx": "^15.3.3",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3"
+  }
+}

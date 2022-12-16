@@ -1,0 +1,31 @@
+{
+  "name": "@giveerr/eslint-config-prettier-javascript",
+  "version": "0.0.0",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "prettier",
+    "javascript"
+  ],
+  "repository": "github:giveerr/eslint",
+  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "scripts": {
+    "build": "sh ./../../scripts/build.sh",
+    "clean": "sh ./../../scripts/clean.sh"
+  },
+  "dependencies": {
+    "@giveerr/eslint-config": "*",
+    "@giveerr/eslint-config-prettier": "*",
+    "@giveerr/prettier-config": "*",
+    "eslint": "^8.29.0",
+    "prettier": "^2.8.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

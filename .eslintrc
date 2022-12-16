@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": "@giveerr/eslint-config",
+  "overrides": [
+    {
+      "files": ["./*.js", "./packages/*/*.js"],
+      "extends": ["@giveerr/eslint-config-node"]
+    },
+    {
+      "files": ["packages/**/*.ts"],
+      "extends": "@giveerr/eslint-config-prettier-typescript"
+    }
+  ]
+}

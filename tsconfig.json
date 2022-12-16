@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "paths": {
+      "@giveerr": ["./packages/*/src"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
