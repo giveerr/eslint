@@ -1,6 +1,6 @@
 {
   "name": "@giveerr/utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": "github:giveerr/eslint",
   "license": "MIT",
   "type": "module",
