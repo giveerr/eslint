@@ -1,0 +1,28 @@
+{
+  "name": "@giveerr/eslint-config-solid",
+  "version": "2.0.0",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "solid"
+  ],
+  "repository": "github:giveerr/eslint",
+  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "scripts": {
+    "build": "sh ./../../scripts/build.sh",
+    "clean": "sh ./../../scripts/clean.sh"
+  },
+  "dependencies": {
+    "@giveerr/eslint-config-typescript": "*",
+    "eslint": "^8.29.0",
+    "eslint-plugin-solid": "^0.9.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
