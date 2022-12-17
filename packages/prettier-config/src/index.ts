@@ -1,6 +1,6 @@
 import type { Options } from 'prettier'
 
-const defaultConfig: Options = {
+const prettierConfig: Options = {
   printWidth: 120,
   singleQuote: true,
   useTabs: false,
@@ -15,4 +15,4 @@ const defaultConfig: Options = {
   vueIndentScriptAndStyle: false
 }
 
-export default defaultConfig
+export default prettierConfig

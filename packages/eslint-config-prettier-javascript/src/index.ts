@@ -2,7 +2,7 @@ import defaultConfig from '@giveerr/eslint-config'
 
 import type { ESLint } from 'eslint'
 
-const prettierTypescriptConfig: ESLint.ConfigData = {
+const prettierJavascriptConfig: ESLint.ConfigData = {
   extends: [require.resolve('@giveerr/eslint-config'), require.resolve('@giveerr/eslint-config-prettier')],
   parserOptions: defaultConfig.parserOptions,
   rules: {
@@ -17,4 +17,4 @@ const prettierTypescriptConfig: ESLint.ConfigData = {
   }
 }
 
-export default prettierTypescriptConfig
+export default prettierJavascriptConfig
