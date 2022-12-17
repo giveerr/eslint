@@ -24,6 +24,7 @@
   "prettier": "@giveerr/prettier-config",
   "devDependencies": {
     "@giveerr/eslint-config": "*",
+    "@giveerr/eslint-config-prettier-javascript": "*",
     "@giveerr/eslint-config-prettier-typescript": "*",
     "@types/node": "^18.11.11",
     "eslint": "^8.29.0",

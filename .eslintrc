@@ -4,7 +4,7 @@
   "overrides": [
     {
       "files": ["./*.js", "./packages/*/*.js"],
-      "extends": ["@giveerr/eslint-config-node"]
+      "extends": ["@giveerr/eslint-config-prettier-javascript"]
     },
     {
       "files": ["packages/**/*.ts"],
