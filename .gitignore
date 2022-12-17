@@ -50,6 +50,8 @@ yarn-error.log*
 **/lib/
 **/logs
 
+localtest
+
 packages/*/index.js
 !.yarn/patches
 !.yarn/plugins
