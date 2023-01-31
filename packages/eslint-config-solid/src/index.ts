@@ -13,9 +13,6 @@ const solidConfig: ESLint.ConfigData = {
     }
   },
   rules: {
-    '@typescript-eslint/no-unsafe-assignment': 'off',
-    '@typescript-eslint/no-unsafe-return': 'off',
-
     'solid/components-return-once': 'error',
     'solid/event-handlers': [
       'error',
