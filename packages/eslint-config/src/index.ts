@@ -307,7 +307,7 @@ const defaultConfig: ESLint.ConfigData = {
       {
         groups: ['index', 'sibling', 'parent', 'internal', 'external', 'builtin', 'object', 'type'],
         'newlines-between': 'always-and-inside-groups',
-        warnOnUnassignedImports: true,
+        warnOnUnassignedImports: false,
         alphabetize: {
           order: 'asc',
           caseInsensitive: true

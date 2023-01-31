@@ -126,34 +126,162 @@ const typescriptConfig: ESLint.ConfigData = {
     '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
     '@typescript-eslint/consistent-type-exports': ['error', { fixMixedExportsWithInlineTypeSpecifier: true }],
     '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/explicit-function-return-type': [
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': [
       'error',
       {
-        allowExpressions: true,
-        allowTypedFunctionExpressions: true,
-        allowHigherOrderFunctions: true,
-        allowDirectConstAssertionInArrowFunctions: true,
-        allowConciseArrowFunctionExpressionsStartingWithVoid: true
+        accessibility: 'no-public',
+        overrides: {
+          accessors: 'no-public',
+          constructors: 'no-public',
+          methods: 'no-public',
+          properties: 'no-public',
+          parameterProperties: 'explicit'
+        }
       }
     ],
-    '@typescript-eslint/explicit-member-accessibility': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/member-ordering': [
       'warn',
       {
         default: [
+          // Index signature
+          'signature',
+          'call-signature',
+
+          // Fields
+          'public-static-field',
+          'protected-static-field',
+          'private-static-field',
+          '#private-static-field',
+
+          'public-decorated-field',
+          'protected-decorated-field',
+          'private-decorated-field',
+
+          'public-instance-field',
+          'protected-instance-field',
+          'private-instance-field',
+          '#private-instance-field',
+
+          'public-abstract-field',
+          'protected-abstract-field',
+
           'public-field',
           'protected-field',
           'private-field',
+          '#private-field',
+
+          'static-field',
+          'instance-field',
+          'abstract-field',
+
+          'decorated-field',
+
+          'field',
+
+          // Static initialization
+          'static-initialization',
+
+          // Constructors
+          'public-constructor',
+          'protected-constructor',
+          'private-constructor',
+
+          'constructor',
+
+          // Getters
+          'public-static-get',
+          'protected-static-get',
+          'private-static-get',
+          '#private-static-get',
+
+          'public-decorated-get',
+          'protected-decorated-get',
+          'private-decorated-get',
+
+          'public-instance-get',
+          'protected-instance-get',
+          'private-instance-get',
+          '#private-instance-get',
+
+          'public-abstract-get',
+          'protected-abstract-get',
+
           'public-get',
           'protected-get',
           'private-get',
+          '#private-get',
+
+          'static-get',
+          'instance-get',
+          'abstract-get',
+
+          'decorated-get',
+
+          'get',
+
+          // Setters
+          'public-static-set',
+          'protected-static-set',
+          'private-static-set',
+          '#private-static-set',
+
+          'public-decorated-set',
+          'protected-decorated-set',
+          'private-decorated-set',
+
+          'public-instance-set',
+          'protected-instance-set',
+          'private-instance-set',
+          '#private-instance-set',
+
+          'public-abstract-set',
+          'protected-abstract-set',
+
           'public-set',
           'protected-set',
           'private-set',
+          '#private-set',
+
+          'static-set',
+          'instance-set',
+          'abstract-set',
+
+          'decorated-set',
+
+          'set',
+
+          // Methods
+          'public-static-method',
+          'protected-static-method',
+          'private-static-method',
+          '#private-static-method',
+
+          'public-decorated-method',
+          'protected-decorated-method',
+          'private-decorated-method',
+
+          'public-instance-method',
+          'protected-instance-method',
+          'private-instance-method',
+          '#private-instance-method',
+
+          'public-abstract-method',
+          'protected-abstract-method',
+
           'public-method',
           'protected-method',
-          'private-method'
+          'private-method',
+          '#private-method',
+
+          'static-method',
+          'instance-method',
+          'abstract-method',
+
+          'decorated-method',
+
+          'method'
         ]
       }
     ],
@@ -162,7 +290,12 @@ const typescriptConfig: ESLint.ConfigData = {
     '@typescript-eslint/no-confusing-non-null-assertion': 'error',
     '@typescript-eslint/no-confusing-void-expression': 'error',
     '@typescript-eslint/no-empty-interface': 'warn',
-    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-explicit-any': [
+      'error',
+      {
+        ignoreRestArgs: true
+      }
+    ],
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-floating-promises': 'warn',
     '@typescript-eslint/no-for-in-array': 'warn',
@@ -180,7 +313,7 @@ const typescriptConfig: ESLint.ConfigData = {
     '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error',
     '@typescript-eslint/no-unnecessary-type-constraint': 'error',
-    '@typescript-eslint/no-unsafe-argument': 'warn',
+    '@typescript-eslint/no-unsafe-argument': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'error',
     '@typescript-eslint/no-unsafe-return': 'error',
     '@typescript-eslint/no-var-requires': 'error',
@@ -204,7 +337,16 @@ const typescriptConfig: ESLint.ConfigData = {
     '@typescript-eslint/prefer-ts-expect-error': 'error',
     '@typescript-eslint/promise-function-async': 'warn',
     '@typescript-eslint/restrict-plus-operands': 'warn',
-    '@typescript-eslint/restrict-template-expressions': 'warn',
+    '@typescript-eslint/restrict-template-expressions': [
+      'warn',
+      {
+        allowNumber: true,
+        allowBoolean: true,
+        allowAny: true,
+        allowNullish: true,
+        allowRegExp: false
+      }
+    ],
     '@typescript-eslint/sort-type-constituents': 'warn',
     '@typescript-eslint/switch-exhaustiveness-check': 'warn',
     '@typescript-eslint/unified-signatures': 'warn'
