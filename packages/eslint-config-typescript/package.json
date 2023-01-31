@@ -19,9 +19,9 @@
   },
   "dependencies": {
     "@giveerr/eslint-config": "*",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
-    "eslint": "^8.29.0"
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0"
   },
   "publishConfig": {
     "access": "public"

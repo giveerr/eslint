@@ -17,9 +17,9 @@
     "clean": "sh ./../../scripts/clean.sh"
   },
   "dependencies": {
-    "eslint": "^8.29.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.6.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1"
   },
   "devDependencies": {
