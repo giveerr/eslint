@@ -1,6 +1,6 @@
 {
   "name": "@giveerr/eslint-config-prettier-solid",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -19,9 +19,9 @@
     "clean": "sh ./../../scripts/clean.sh"
   },
   "dependencies": {
-    "@giveerr/eslint-config-prettier": "*",
-    "@giveerr/eslint-config-solid": "*",
-    "@giveerr/prettier-config": "*",
+    "@giveerr/eslint-config-prettier": "2.2.2",
+    "@giveerr/eslint-config-solid": "2.2.2",
+    "@giveerr/prettier-config": "2.2.2",
     "eslint": "^8.33.0",
     "prettier": "^2.8.3"
   },
