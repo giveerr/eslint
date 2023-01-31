@@ -69,7 +69,6 @@ const typescriptConfig: ESLint.ConfigData = {
     '@typescript-eslint/no-redeclare': defaultConfig.rules!['no-redeclare'],
     '@typescript-eslint/comma-spacing': defaultConfig.rules!['comma-spacing'],
     '@typescript-eslint/require-await': defaultConfig.rules!['require-await'],
-    '@typescript-eslint/return-await': defaultConfig.rules!['no-return-await'],
     '@typescript-eslint/no-unused-vars': defaultConfig.rules!['no-unused-vars'],
     '@typescript-eslint/keyword-spacing': defaultConfig.rules!['keyword-spacing'],
     '@typescript-eslint/space-infix-ops': defaultConfig.rules!['space-infix-ops'],
@@ -89,6 +88,7 @@ const typescriptConfig: ESLint.ConfigData = {
     '@typescript-eslint/space-before-function-paren': defaultConfig.rules!['space-before-function-paren'],
     '@typescript-eslint/lines-between-class-members': defaultConfig.rules!['lines-between-class-members'],
 
+    '@typescript-eslint/return-await': ['error', 'always'],
     '@typescript-eslint/class-literal-property-style': 'off',
     '@typescript-eslint/consistent-indexed-object-style': 'off',
     '@typescript-eslint/consistent-type-assertions': 'off',

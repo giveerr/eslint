@@ -78,7 +78,7 @@ const reactConfig: ESLint.ConfigData = {
     ],
     'react/jsx-max-depth': ['error', { max: 5 }],
     'react/jsx-max-props-per-line': 'error',
-    'react/jsx-newline': ['error', { prevent: false, allowMultilines: true }],
+    'react/jsx-newline': ['error', { prevent: true, allowMultilines: true }],
     'react/jsx-no-comment-textnodes': 'error',
     'react/jsx-no-duplicate-props': 'error',
     'react/jsx-no-script-url': 'error',
