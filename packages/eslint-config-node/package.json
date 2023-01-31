@@ -1,6 +1,6 @@
 {
   "name": "@giveerr/eslint-config-node",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -18,7 +18,7 @@
     "clean": "sh ./../../scripts/clean.sh"
   },
   "dependencies": {
-    "@giveerr/eslint-config": "2.2.2",
+    "@giveerr/eslint-config": "2.2.3",
     "eslint": "^8.33.0"
   },
   "publishConfig": {
