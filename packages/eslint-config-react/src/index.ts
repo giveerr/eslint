@@ -1,20 +1,19 @@
-import typescriptConfig from '@giveerr/eslint-config-typescript'
+import basic from '@giveerr/eslint-config-basic'
 
 import type { ESLint } from 'eslint'
 
 const reactConfig: ESLint.ConfigData = {
-  ...typescriptConfig,
-  plugins: ['react', 'react-hooks', 'jsx-a11y'],
+  ...basic,
+
   extends: [
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/strict',
     require.resolve('@giveerr/eslint-config-typescript')
   ],
-  parserOptions: {
-    ...typescriptConfig.parserOptions,
-    ecmaFeatures: {
-      jsx: true
+  settings: {
+    react: {
+      version: '17.0'
     }
   },
   rules: {
@@ -143,7 +142,7 @@ const reactConfig: ESLint.ConfigData = {
     'react/prefer-exact-props': 'warn',
     'react/prefer-read-only-props': 'error',
     'react/prefer-stateless-function': 'warn',
-    'react/prop-types': 'error',
+    'react/prop-types': 'off',
     'react/require-default-props': 'warn',
     'react/require-optimization': 'warn',
     'react/require-render-return': 'error',
@@ -214,7 +213,7 @@ const reactConfig: ESLint.ConfigData = {
         prop: 'ignore'
       }
     ],
-    'react/jsx-no-bind': 'error',
+    'react/jsx-no-bind': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
   }

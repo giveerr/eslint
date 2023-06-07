@@ -1,17 +1,11 @@
-import typescriptConfig from '@giveerr/eslint-config-typescript'
+import basic from '@giveerr/eslint-config-basic'
 
 import type { ESLint } from 'eslint'
 
 const solidConfig: ESLint.ConfigData = {
-  ...typescriptConfig,
-  plugins: ['solid'],
+  ...basic,
+
   extends: ['plugin:solid/typescript', require.resolve('@giveerr/eslint-config-typescript')],
-  parserOptions: {
-    ...typescriptConfig.parserOptions,
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
   rules: {
     'solid/components-return-once': 'error',
     'solid/event-handlers': [

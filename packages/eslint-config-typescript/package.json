@@ -1,6 +1,7 @@
 {
   "name": "@giveerr/eslint-config-typescript",
-  "version": "2.2.3",
+  "version": "2.2.4",
+  "description": "giveer's ESLint-typescript config",
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -18,10 +19,17 @@
     "clean": "sh ./../../scripts/clean.sh"
   },
   "dependencies": {
-    "@giveerr/eslint-config": "2.2.3",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0"
+    "@giveerr/eslint-config-basic": "*",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "eslint-plugin-jest": "^27.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0",
+    "typescript": ">=3.9"
   },
   "publishConfig": {
     "access": "public"
