@@ -1,6 +1,6 @@
 {
   "name": "@giveerr/eslint-config-typescript",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "giveer's ESLint-typescript config",
   "keywords": [
     "eslint",
