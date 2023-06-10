@@ -358,8 +358,21 @@ const typescriptConfig: ESLint.ConfigData = {
     jsdoc: {
       mode: 'typescript'
     },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
     'import/resolver': {
-      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] }
+      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
+      typescript: {
+        alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+
+        // use a glob pattern
+        project: fs.existsSync(path.join(process.cwd(), tsconfig))
+          ? ['**/tsconfig.json', path.join(process.cwd(), tsconfig)]
+          : [
+              '**/tsconfig.json'
+            ]
+      }
     }
   },
   overrides: basic.overrides!.concat(

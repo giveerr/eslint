@@ -1,6 +1,6 @@
 {
   "name": "@giveerr/eslint-config-solid",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "giveer's ESLint-solid config",
   "keywords": [
     "eslint",
