@@ -6,10 +6,10 @@ const reactConfig: ESLint.ConfigData = {
   ...basic,
 
   extends: [
+    require.resolve('@giveerr/eslint-config-typescript'),
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/strict',
-    require.resolve('@giveerr/eslint-config-typescript')
+    'plugin:jsx-a11y/strict'
   ],
   settings: {
     react: {

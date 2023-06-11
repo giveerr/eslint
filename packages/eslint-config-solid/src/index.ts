@@ -5,7 +5,7 @@ import type { ESLint } from 'eslint'
 const solidConfig: ESLint.ConfigData = {
   ...basic,
 
-  extends: ['plugin:solid/typescript', require.resolve('@giveerr/eslint-config-typescript')],
+  extends: [require.resolve('@giveerr/eslint-config-typescript'), 'plugin:solid/typescript'],
   rules: {
     'solid/components-return-once': 'error',
     'solid/event-handlers': [
