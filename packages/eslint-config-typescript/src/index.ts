@@ -44,7 +44,12 @@ const overrides: Record<string, RuleEntry> = {
   'no-return-await': 'off',
   semi: 'off',
   'space-before-function-paren': 'off',
-  'space-infix-ops': 'off'
+  'space-infix-ops': 'off',
+  'block-spacing': 'off',
+  'key-spacing': 'off',
+  'lines-around-comment': 0,
+  'no-extra-semi': 'off',
+  'space-before-blocks': 'off'
 }
 
 const rules: Record<string, RuleEntry> = {
@@ -80,7 +85,28 @@ const rules: Record<string, RuleEntry> = {
   '@typescript-eslint/no-useless-constructor': basic.rules!['no-useless-constructor']!,
   '@typescript-eslint/space-before-function-paren': basic.rules!['space-before-function-paren']!,
   '@typescript-eslint/lines-between-class-members': basic.rules!['lines-between-class-members']!,
-
+  '@typescript-eslint/block-spacing': basic.rules!['block-spacing']!,
+  '@typescript-eslint/key-spacing': basic.rules!['key-spacing']!,
+  '@typescript-eslint/lines-around-comment': ['error'],
+  '@typescript-eslint/no-extra-semi': basic.rules!['no-extra-semi']!,
+  '@typescript-eslint/space-before-blocks': basic.rules!['space-before-blocks']!,
+  '@typescript-eslint/type-annotation-spacing': [
+    'error',
+    {
+      before: false,
+      after: true,
+      overrides: {
+        colon: {
+          before: false,
+          after: true
+        },
+        arrow: {
+          before: true,
+          after: true
+        }
+      }
+    }
+  ],
   '@typescript-eslint/return-await': ['error', 'always'],
   '@typescript-eslint/class-literal-property-style': 'off',
   '@typescript-eslint/consistent-indexed-object-style': 'off',
@@ -342,7 +368,21 @@ const rules: Record<string, RuleEntry> = {
   ],
   '@typescript-eslint/sort-type-constituents': 'warn',
   '@typescript-eslint/switch-exhaustiveness-check': 'warn',
-  '@typescript-eslint/unified-signatures': 'warn'
+  '@typescript-eslint/unified-signatures': 'warn',
+  '@typescript-eslint/member-delimiter-style': [
+    'error',
+    {
+      multiline: {
+        delimiter: 'none',
+        requireLast: false
+      },
+      singleline: {
+        delimiter: 'semi',
+        requireLast: false
+      },
+      multilineDetection: 'brackets'
+    }
+  ]
 }
 
 const typescriptConfig: ESLint.ConfigData = {
@@ -352,7 +392,9 @@ const typescriptConfig: ESLint.ConfigData = {
     require.resolve('@giveerr/eslint-config-basic'),
     'plugin:import/typescript',
     'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:@typescript-eslint/strict'
   ],
   settings: {
     jsdoc: {
@@ -362,16 +404,23 @@ const typescriptConfig: ESLint.ConfigData = {
       '@typescript-eslint/parser': ['.ts', '.tsx']
     },
     'import/resolver': {
-      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
+      node: {
+        extensions: [
+          '.js',
+          '.jsx',
+          '.mjs',
+          '.ts',
+          '.tsx',
+          '.d.ts'
+        ]
+      },
       typescript: {
         alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
 
         // use a glob pattern
         project: fs.existsSync(path.join(process.cwd(), tsconfig))
           ? ['**/tsconfig.json', path.join(process.cwd(), tsconfig)]
-          : [
-              '**/tsconfig.json'
-            ]
+          : ['**/tsconfig.json']
       }
     }
   },
@@ -388,11 +437,20 @@ const typescriptConfig: ESLint.ConfigData = {
             },
             parser: '@typescript-eslint/parser',
             excludedFiles: ['**/*.md/*.*'],
-            files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+            files: [
+              '*.ts',
+              '*.tsx',
+              '*.mts',
+              '*.cts'
+            ],
             rules
           },
           {
-            files: ['**/__tests__/**/*.ts', '**/*.spec.ts', '**/*.test.ts'],
+            files: [
+              '**/__tests__/**/*.ts',
+              '**/*.spec.ts',
+              '**/*.test.ts'
+            ],
             plugins: ['jest'],
             rules: {
               ...rules,

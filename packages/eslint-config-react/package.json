@@ -1,6 +1,6 @@
 {
   "name": "@giveerr/eslint-config-react",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "description": "giveer's ESLint-react config",
   "keywords": [
     "eslint",

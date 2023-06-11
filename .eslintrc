@@ -1,6 +1,3 @@
 {
-  "extends": "@giveerr/eslint-config",
-  "parserOptions": {
-    "sourceType": "module"
-  }
+  "extends": "@giveerr/eslint-config"
 }

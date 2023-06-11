@@ -9,7 +9,14 @@ const defaultConfig: ESLint.ConfigData = {
     'plugin:yml/standard',
     'plugin:markdown/recommended'
   ],
-  plugins: ['html', 'unicorn', 'no-only-tests', 'unused-imports', 'n', 'promise'],
+  plugins: [
+    'html',
+    'unicorn',
+    'no-only-tests',
+    'unused-imports',
+    'n',
+    'promise'
+  ],
   env: {
     es6: true,
     browser: true,
@@ -63,7 +70,11 @@ const defaultConfig: ESLint.ConfigData = {
   ],
   overrides: [
     {
-      files: ['*.json', '*.json5', '*.jsonc'],
+      files: [
+        '*.json',
+        '*.json5',
+        '*.jsonc'
+      ],
       parser: 'jsonc-eslint-parser',
       rules: {
         'jsonc/key-name-casing': 'off',
@@ -190,7 +201,11 @@ const defaultConfig: ESLint.ConfigData = {
           },
           {
             pathPattern: '^exports.*$',
-            order: ['types', 'require', 'import']
+            order: [
+              'types',
+              'require',
+              'import'
+            ]
           }
         ]
       }
@@ -202,14 +217,23 @@ const defaultConfig: ESLint.ConfigData = {
       }
     },
     {
-      files: ['*.js', '*.cjs', '*.jsx'],
+      files: [
+        '*.js',
+        '*.cjs',
+        '*.jsx'
+      ],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-require-imports': 'off'
       }
     },
     {
-      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
+      files: [
+        '*.test.ts',
+        '*.test.js',
+        '*.spec.ts',
+        '*.spec.js'
+      ],
       rules: {
         'no-unused-expressions': 'off',
         'no-only-tests/no-only-tests': 'error'
@@ -284,7 +308,11 @@ const defaultConfig: ESLint.ConfigData = {
     ],
     'arrow-spacing': ['error', { before: true, after: true }],
     'block-spacing': ['error', 'always'],
-    'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+    'brace-style': [
+      'error',
+      '1tbs',
+      { allowSingleLine: true }
+    ],
     camelcase: [
       'error',
       {
@@ -305,14 +333,51 @@ const defaultConfig: ESLint.ConfigData = {
     ],
     'comma-spacing': ['error', { before: false, after: true }],
     'comma-style': ['error', 'last'],
-    'computed-property-spacing': ['error', 'never', { enforceForClassMembers: true }],
+    'computed-property-spacing': [
+      'error',
+      'never',
+      { enforceForClassMembers: true }
+    ],
     'constructor-super': 'error',
     curly: ['error', 'multi-line'],
+    'lines-around-comment': [
+      'error',
+      {
+        beforeBlockComment: true,
+        beforeLineComment: true,
+        allowBlockStart: true,
+        allowBlockEnd: true,
+        allowClassStart: true,
+        allowClassEnd: true,
+        allowObjectStart: true,
+        allowObjectEnd: true,
+        allowArrayStart: true,
+        allowArrayEnd: true
+      }
+    ],
+    'array-bracket-newline': ['error', { multiline: true, minItems: 3 }],
+    'max-len': 'off',
+    'array-element-newline': ['error', { multiline: true, minItems: 3 }],
+    'function-call-argument-newline': ['error', 'consistent'],
+    'implicit-arrow-linebreak': ['error', 'beside'],
     'default-case-last': 'error',
+    'jsx-quotes': ['error', 'prefer-double'],
+    'linebreak-style': ['error', 'unix'],
+    'newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
+    'no-extra-semi': 'error',
+    'nonblock-statement-body-position': ['error', 'beside'],
+    'one-var-declaration-per-line': 'off',
+    'semi-style': ['error', 'last'],
+    'switch-colon-spacing': ['error', { after: true, before: false }],
+    'wrap-regex': 'error',
     'dot-location': ['error', 'property'],
     'dot-notation': 'error',
     'eol-last': 'error',
-    eqeqeq: ['error', 'always', { null: 'ignore' }],
+    eqeqeq: [
+      'error',
+      'always',
+      { null: 'ignore' }
+    ],
     'func-call-spacing': ['error', 'never'],
     'generator-star-spacing': ['error', { before: true, after: false }],
     indent: [
@@ -355,7 +420,11 @@ const defaultConfig: ESLint.ConfigData = {
     ],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
     'keyword-spacing': ['error', { before: true, after: true }],
-    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+    'lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterSingleLine: true }
+    ],
     'multiline-ternary': ['error', 'always-multiline'],
     // eslint-disable-next-line unicorn/no-keyword-prefix
     'new-cap': ['error', { newIsCap: true, capIsNew: false, properties: true }],
@@ -406,7 +475,16 @@ const defaultConfig: ESLint.ConfigData = {
       'error',
       {
         groups: [
-          ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+          [
+            '==',
+            '!=',
+            '===',
+            '!==',
+            '>',
+            '>=',
+            '<',
+            '<='
+          ],
           ['&&', '||'],
           ['in', 'instanceof']
         ],
@@ -479,13 +557,21 @@ const defaultConfig: ESLint.ConfigData = {
     'object-curly-spacing': ['error', 'always'],
     'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
     'one-var': ['error', { initialized: 'never' }],
-    'operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before', '|>': 'before' } }],
+    'operator-linebreak': [
+      'error',
+      'after',
+      { overrides: { '?': 'before', ':': 'before', '|>': 'before' } }
+    ],
     'padded-blocks': ['error', { blocks: 'never', switches: 'never', classes: 'never' }],
     'prefer-const': ['error', { destructuring: 'all' }],
     'prefer-promise-reject-errors': 'error',
     'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
     'quote-props': ['error', 'as-needed'],
-    quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: false }],
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: false }
+    ],
     'rest-spread-spacing': ['error', 'never'],
     semi: ['error', 'never'],
     'semi-spacing': ['error', { before: false, after: true }],
@@ -498,10 +584,25 @@ const defaultConfig: ESLint.ConfigData = {
       'error',
       'always',
       {
-        line: { markers: ['*package', '!', '/', ',', '='] },
+        line: {
+          markers: [
+            '*package',
+            '!',
+            '/',
+            ',',
+            '='
+          ]
+        },
         block: {
           balanced: true,
-          markers: ['*package', '!', ',', ':', '::', 'flow-include'],
+          markers: [
+            '*package',
+            '!',
+            ',',
+            ':',
+            '::',
+            'flow-include'
+          ],
           exceptions: ['*']
         }
       }
@@ -518,7 +619,11 @@ const defaultConfig: ESLint.ConfigData = {
       }
     ],
     'valid-typeof': ['error', { requireStringLiterals: true }],
-    'wrap-iife': ['error', 'any', { functionPrototypeMethods: true }],
+    'wrap-iife': [
+      'error',
+      'any',
+      { functionPrototypeMethods: true }
+    ],
     'yield-star-spacing': ['error', 'both'],
     yoda: ['error', 'never'],
 
@@ -531,7 +636,16 @@ const defaultConfig: ESLint.ConfigData = {
     'import/order': [
       'error',
       {
-        groups: ['index', 'sibling', 'parent', 'internal', 'external', 'builtin', 'object', 'type'],
+        groups: [
+          'index',
+          'sibling',
+          'parent',
+          'internal',
+          'external',
+          'builtin',
+          'object',
+          'type'
+        ],
         'newlines-between': 'always-and-inside-groups',
         warnOnUnassignedImports: false,
         alphabetize: {
@@ -542,10 +656,7 @@ const defaultConfig: ESLint.ConfigData = {
     ],
 
     'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }
-    ],
+    'unused-imports/no-unused-vars': ['warn', { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }],
 
     'unicorn/custom-error-definition': 'error',
     'unicorn/no-keyword-prefix': 'error',

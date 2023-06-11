@@ -40,7 +40,11 @@ const solidConfig: ESLint.ConfigData = {
     'solid/prefer-classlist': [
       'error',
       {
-        classnames: ['cn', 'clsx', 'classnames']
+        classnames: [
+          'cn',
+          'clsx',
+          'classnames'
+        ]
       }
     ],
     'solid/prefer-for': 'error',

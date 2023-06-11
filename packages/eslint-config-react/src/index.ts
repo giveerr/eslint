@@ -150,7 +150,12 @@ const reactConfig: ESLint.ConfigData = {
     'react/sort-comp': [
       'error',
       {
-        order: ['static-methods', 'lifecycle', 'everything-else', 'render'],
+        order: [
+          'static-methods',
+          'lifecycle',
+          'everything-else',
+          'render'
+        ],
         groups: {
           lifecycle: [
             'displayName',
