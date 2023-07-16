@@ -1,6 +1,6 @@
 {
   "name": "@giveerr/eslint",
-  "version": "2.2.8",
+  "version": "2.2.11",
   "private": true,
   "license": "MIT",
   "workspaces": {
@@ -20,8 +20,10 @@
     "*.ts": "eslint --fix",
     "package.json": "npx sort-package-json"
   },
+  "prettier": "@giveerr/prettier-config",
   "devDependencies": {
     "@giveerr/eslint-config": "*",
+    "@giveerr/prettier-config": "*",
     "@types/node": "^20.2.5",
     "eslint": "^8.33.0",
     "husky": "^8.0.3",

@@ -7,16 +7,10 @@ const defaultConfig: ESLint.ConfigData = {
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
-    'plugin:markdown/recommended'
+    'plugin:markdown/recommended',
+    'plugin:prettier/recommended'
   ],
-  plugins: [
-    'html',
-    'unicorn',
-    'no-only-tests',
-    'unused-imports',
-    'n',
-    'promise'
-  ],
+  plugins: ['html', 'unicorn', 'no-only-tests', 'n', 'promise'],
   env: {
     es6: true,
     browser: true,
@@ -70,13 +64,23 @@ const defaultConfig: ESLint.ConfigData = {
   ],
   overrides: [
     {
-      files: [
-        '*.json',
-        '*.json5',
-        '*.jsonc'
-      ],
+      files: ['*.json', '*.json5', '*.jsonc'],
       parser: 'jsonc-eslint-parser',
       rules: {
+        'jsonc/array-bracket-newline': 'off',
+        'jsonc/array-bracket-spacing': 'off',
+        'jsonc/array-element-newline': 'off',
+        'jsonc/comma-dangle': 'off',
+        'jsonc/comma-style': 'off',
+        'jsonc/indent': 'off',
+        'jsonc/key-spacing': 'off',
+        'jsonc/no-floating-decimal': 'off',
+        'jsonc/object-curly-newline': 'off',
+        'jsonc/object-curly-spacing': 'off',
+        'jsonc/object-property-newline': 'off',
+        'jsonc/quote-props': 'off',
+        'jsonc/quotes': 'off',
+        'jsonc/space-unary-ops': 'off',
         'jsonc/key-name-casing': 'off',
         'jsonc/sort-array-values': [
           'error',
@@ -106,19 +110,6 @@ const defaultConfig: ESLint.ConfigData = {
             minKeys: 2
           }
         ],
-        'jsonc/array-bracket-newline': [
-          'error',
-          {
-            multiline: true,
-            minItems: null
-          }
-        ],
-        'jsonc/array-bracket-spacing': ['error', 'never'],
-        'jsonc/array-element-newline': 'off',
-        'jsonc/comma-dangle': ['error', 'never'],
-        'jsonc/comma-style': ['error', 'last'],
-        'jsonc/indent': ['error', 2],
-        'jsonc/key-spacing': ['error', { beforeColon: false, afterColon: true, mode: 'strict' }],
         'jsonc/no-irregular-whitespace': [
           'error',
           {
@@ -128,10 +119,7 @@ const defaultConfig: ESLint.ConfigData = {
             skipTemplates: false
           }
         ],
-        'jsonc/no-octal-escape': 'error',
-        'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
-        'jsonc/object-curly-spacing': ['error', 'always'],
-        'jsonc/object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }]
+        'jsonc/no-octal-escape': 'error'
       }
     },
     {
@@ -145,6 +133,21 @@ const defaultConfig: ESLint.ConfigData = {
       files: ['package.json'],
       parser: 'jsonc-eslint-parser',
       rules: {
+        'jsonc/array-bracket-newline': 'off',
+        'jsonc/array-bracket-spacing': 'off',
+        'jsonc/array-element-newline': 'off',
+        'jsonc/comma-dangle': 'off',
+        'jsonc/comma-style': 'off',
+        'jsonc/indent': 'off',
+        'jsonc/key-spacing': 'off',
+        'jsonc/no-floating-decimal': 'off',
+        'jsonc/object-curly-newline': 'off',
+        'jsonc/object-curly-spacing': 'off',
+        'jsonc/object-property-newline': 'off',
+        'jsonc/quote-props': 'off',
+        'jsonc/quotes': 'off',
+        'jsonc/space-unary-ops': 'off',
+
         'jsonc/sort-keys': [
           'error',
           {
@@ -201,11 +204,7 @@ const defaultConfig: ESLint.ConfigData = {
           },
           {
             pathPattern: '^exports.*$',
-            order: [
-              'types',
-              'require',
-              'import'
-            ]
+            order: ['types', 'require', 'import']
           }
         ]
       }
@@ -217,23 +216,14 @@ const defaultConfig: ESLint.ConfigData = {
       }
     },
     {
-      files: [
-        '*.js',
-        '*.cjs',
-        '*.jsx'
-      ],
+      files: ['*.js', '*.cjs', '*.jsx'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-require-imports': 'off'
       }
     },
     {
-      files: [
-        '*.test.ts',
-        '*.test.js',
-        '*.spec.ts',
-        '*.spec.js'
-      ],
+      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
       rules: {
         'no-unused-expressions': 'off',
         'no-only-tests/no-only-tests': 'error'
@@ -252,8 +242,6 @@ const defaultConfig: ESLint.ConfigData = {
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/no-require-imports': 'off',
         'import/no-unresolved': 'off',
-        'unused-imports/no-unused-imports': 'off',
-        'unused-imports/no-unused-vars': 'off',
         'no-alert': 'off',
         'no-console': 'off',
         'no-restricted-imports': 'off',
@@ -264,13 +252,81 @@ const defaultConfig: ESLint.ConfigData = {
     }
   ],
   rules: {
+    curly: 'off',
+    'lines-around-comment': 'off',
+    'max-len': 'off',
+    'no-confusing-arrow': 'off',
+    'no-mixed-operators': 'off',
+    'no-tabs': 'off',
+    'no-unexpected-multiline': 'off',
+    quotes: 'off',
+    'array-bracket-newline': 'off',
+    'array-element-newline': 'off',
+    'array-bracket-spacing': 'off',
+    'arrow-parens': 'off',
+    'arrow-spacing': 'off',
+    'block-spacing': 'off',
+    'brace-style': 'off',
+    'comma-dangle': 'off',
+    'comma-spacing': 'off',
+    'comma-style': 'off',
+    'computed-property-spacing': 'off',
+    'dot-location': 'off',
+    'eol-last': 'off',
+    'func-call-spacing': 'off',
+    'function-call-argument-newline': 'off',
+    'function-paren-newline': 'off',
+    'generator-star-spacing': 'off',
+    'implicit-arrow-linebreak': 'off',
+    indent: 'off',
+    'jsx-quotes': 'off',
+    'key-spacing': 'off',
+    'keyword-spacing': 'off',
+    'linebreak-style': 'off',
+    'multiline-ternary': 'off',
+    'newline-per-chained-call': 'off',
+    'new-parens': 'off',
+    'no-extra-parens': 'off',
+    'no-extra-semi': 'off',
+    'no-floating-decimal': 'off',
+    'no-mixed-spaces-and-tabs': 'off',
+    'no-multi-spaces': 'off',
+    'no-multiple-empty-lines': 'off',
+    'no-trailing-spaces': 'off',
+    'no-whitespace-before-property': 'off',
+    'nonblock-statement-body-position': 'off',
+    'object-curly-newline': 'off',
+    'object-curly-spacing': 'off',
+    'object-property-newline': 'off',
+    'one-var-declaration-per-line': 'off',
+    'operator-linebreak': 'off',
+    'padded-blocks': 'off',
+    'quote-props': 'off',
+    'rest-spread-spacing': 'off',
+    semi: 'off',
+    'semi-spacing': 'off',
+    'semi-style': 'off',
+    'space-before-blocks': 'off',
+    'space-before-function-paren': 'off',
+    'space-in-parens': 'off',
+    'space-infix-ops': 'off',
+    'space-unary-ops': 'off',
+    'switch-colon-spacing': 'off',
+    'template-curly-spacing': 'off',
+    'template-tag-spacing': 'off',
+    'unicode-bom': 'off',
+    'wrap-iife': 'off',
+    'wrap-regex': 'off',
+    'yield-star-spacing': 'off',
+    'arrow-body-style': 'off',
+    'unicorn/empty-brace-spaces': 'off',
+    'unicorn/no-nested-ternary': 'off',
+    'unicorn/number-literal-case': 'off',
+
     'no-var': 'error',
     'object-shorthand': ['error', 'properties'],
 
-    'arrow-parens': ['error', 'as-needed'],
-    'arrow-body-style': 'error',
     'no-await-in-loop': 'error',
-    'no-confusing-arrow': ['error', { allowParens: true, onlyOneSimpleParam: true }],
     'no-duplicate-imports': ['error', { includeExports: true }],
     'no-restricted-imports': 'off',
     'no-return-await': 'error',
@@ -298,20 +354,12 @@ const defaultConfig: ESLint.ConfigData = {
     'require-yield': 'warn',
 
     'accessor-pairs': ['error', { setWithoutGet: true, enforceForClassMembers: true }],
-    'array-bracket-spacing': ['error', 'never'],
     'array-callback-return': [
       'error',
       {
         allowImplicit: false,
         checkForEach: false
       }
-    ],
-    'arrow-spacing': ['error', { before: true, after: true }],
-    'block-spacing': ['error', 'always'],
-    'brace-style': [
-      'error',
-      '1tbs',
-      { allowSingleLine: true }
     ],
     camelcase: [
       'error',
@@ -321,114 +369,13 @@ const defaultConfig: ESLint.ConfigData = {
         ignoreGlobals: true
       }
     ],
-    'comma-dangle': [
-      'error',
-      {
-        arrays: 'never',
-        objects: 'never',
-        imports: 'never',
-        exports: 'never',
-        functions: 'never'
-      }
-    ],
-    'comma-spacing': ['error', { before: false, after: true }],
-    'comma-style': ['error', 'last'],
-    'computed-property-spacing': [
-      'error',
-      'never',
-      { enforceForClassMembers: true }
-    ],
     'constructor-super': 'error',
-    curly: ['error', 'multi-line'],
-    'lines-around-comment': [
-      'error',
-      {
-        beforeBlockComment: true,
-        beforeLineComment: true,
-        allowBlockStart: true,
-        allowBlockEnd: true,
-        allowClassStart: true,
-        allowClassEnd: true,
-        allowObjectStart: true,
-        allowObjectEnd: true,
-        allowArrayStart: true,
-        allowArrayEnd: true
-      }
-    ],
-    'array-bracket-newline': ['error', { multiline: true, minItems: 3 }],
-    'max-len': 'off',
-    'array-element-newline': ['error', { multiline: true, minItems: 3 }],
-    'function-call-argument-newline': ['error', 'consistent'],
-    'implicit-arrow-linebreak': ['error', 'beside'],
     'default-case-last': 'error',
-    'jsx-quotes': ['error', 'prefer-double'],
-    'linebreak-style': ['error', 'unix'],
-    'newline-per-chained-call': ['error', { ignoreChainWithDepth: 3 }],
-    'no-extra-semi': 'error',
-    'nonblock-statement-body-position': ['error', 'beside'],
-    'one-var-declaration-per-line': 'off',
-    'semi-style': ['error', 'last'],
-    'switch-colon-spacing': ['error', { after: true, before: false }],
-    'wrap-regex': 'error',
-    'dot-location': ['error', 'property'],
     'dot-notation': 'error',
-    'eol-last': 'error',
-    eqeqeq: [
-      'error',
-      'always',
-      { null: 'ignore' }
-    ],
-    'func-call-spacing': ['error', 'never'],
-    'generator-star-spacing': ['error', { before: true, after: false }],
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-        VariableDeclarator: 1,
-        outerIIFEBody: 1,
-        MemberExpression: 1,
-        FunctionDeclaration: { parameters: 1, body: 1 },
-        FunctionExpression: { parameters: 1, body: 1 },
-        CallExpression: { arguments: 1 },
-        ArrayExpression: 1,
-        ObjectExpression: 1,
-        ImportDeclaration: 1,
-        flatTernaryExpressions: false,
-        ignoreComments: false,
-        ignoredNodes: [
-          'TemplateLiteral *',
-          'JSXElement',
-          'JSXElement > *',
-          'JSXAttribute',
-          'JSXIdentifier',
-          'JSXNamespacedName',
-          'JSXMemberExpression',
-          'JSXSpreadAttribute',
-          'JSXExpressionContainer',
-          'JSXOpeningElement',
-          'JSXClosingElement',
-          'JSXFragment',
-          'JSXOpeningFragment',
-          'JSXClosingFragment',
-          'JSXText',
-          'JSXEmptyExpression',
-          'JSXSpreadChild'
-        ],
-        offsetTernaryExpressions: true
-      }
-    ],
-    'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    'keyword-spacing': ['error', { before: true, after: true }],
-    'lines-between-class-members': [
-      'error',
-      'always',
-      { exceptAfterSingleLine: true }
-    ],
-    'multiline-ternary': ['error', 'always-multiline'],
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     // eslint-disable-next-line unicorn/no-keyword-prefix
     'new-cap': ['error', { newIsCap: true, capIsNew: false, properties: true }],
-    'new-parens': 'error',
     'no-array-constructor': 'error',
     'no-async-promise-executor': 'error',
     'no-caller': 'error',
@@ -454,9 +401,7 @@ const defaultConfig: ESLint.ConfigData = {
     'no-extend-native': 'error',
     'no-extra-bind': 'error',
     'no-extra-boolean-cast': 'error',
-    'no-extra-parens': ['error', 'functions'],
     'no-fallthrough': 'error',
-    'no-floating-decimal': 'error',
     'no-else-return': ['error', { allowElseIf: true }],
     'no-func-assign': 'error',
     'no-global-assign': 'error',
@@ -471,30 +416,7 @@ const defaultConfig: ESLint.ConfigData = {
     'no-misleading-character-class': 'error',
     'no-prototype-builtins': 'error',
     'no-useless-catch': 'error',
-    'no-mixed-operators': [
-      'error',
-      {
-        groups: [
-          [
-            '==',
-            '!=',
-            '===',
-            '!==',
-            '>',
-            '>=',
-            '<',
-            '<='
-          ],
-          ['&&', '||'],
-          ['in', 'instanceof']
-        ],
-        allowSamePrecedence: true
-      }
-    ],
-    'no-mixed-spaces-and-tabs': 'error',
-    'no-multi-spaces': 'error',
     'no-multi-str': 'error',
-    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
     'no-new': 'error',
     'no-new-func': 'error',
     'no-new-object': 'error',
@@ -512,14 +434,11 @@ const defaultConfig: ESLint.ConfigData = {
     'no-sequences': 'error',
     'no-shadow-restricted-names': 'error',
     'no-sparse-arrays': 'error',
-    'no-tabs': 'error',
     'no-template-curly-in-string': 'error',
     'no-this-before-super': 'error',
     'no-throw-literal': 'error',
-    'no-trailing-spaces': 'error',
     'no-undef': 'error',
     'no-undef-init': 'error',
-    'no-unexpected-multiline': 'error',
     'no-unmodified-loop-condition': 'error',
     'no-unneeded-ternary': ['error', { defaultAssignment: false }],
     'no-unreachable': 'error',
@@ -551,66 +470,26 @@ const defaultConfig: ESLint.ConfigData = {
     'no-useless-rename': 'error',
     'no-useless-return': 'error',
     'no-void': ['error', { allowAsStatement: true }],
-    'no-whitespace-before-property': 'error',
     'no-with': 'error',
-    'object-curly-newline': ['error', { multiline: true, consistent: true }],
-    'object-curly-spacing': ['error', 'always'],
-    'object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
     'one-var': ['error', { initialized: 'never' }],
-    'operator-linebreak': [
-      'error',
-      'after',
-      { overrides: { '?': 'before', ':': 'before', '|>': 'before' } }
-    ],
-    'padded-blocks': ['error', { blocks: 'never', switches: 'never', classes: 'never' }],
     'prefer-const': ['error', { destructuring: 'all' }],
     'prefer-promise-reject-errors': 'error',
     'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
-    'quote-props': ['error', 'as-needed'],
-    quotes: [
-      'error',
-      'single',
-      { avoidEscape: true, allowTemplateLiterals: false }
-    ],
-    'rest-spread-spacing': ['error', 'never'],
-    semi: ['error', 'never'],
-    'semi-spacing': ['error', { before: false, after: true }],
-    'space-before-blocks': ['error', 'always'],
-    'space-before-function-paren': ['error', 'always'],
-    'space-in-parens': ['error', 'never'],
-    'space-infix-ops': 'error',
-    'space-unary-ops': ['error', { words: true, nonwords: false }],
     'spaced-comment': [
       'error',
       'always',
       {
         line: {
-          markers: [
-            '*package',
-            '!',
-            '/',
-            ',',
-            '='
-          ]
+          markers: ['*package', '!', '/', ',', '=']
         },
         block: {
           balanced: true,
-          markers: [
-            '*package',
-            '!',
-            ',',
-            ':',
-            '::',
-            'flow-include'
-          ],
+          markers: ['*package', '!', ',', ':', '::', 'flow-include'],
           exceptions: ['*']
         }
       }
     ],
     'symbol-description': 'error',
-    'template-curly-spacing': ['error', 'never'],
-    'template-tag-spacing': ['error', 'never'],
-    'unicode-bom': ['error', 'never'],
     'use-isnan': [
       'error',
       {
@@ -619,12 +498,6 @@ const defaultConfig: ESLint.ConfigData = {
       }
     ],
     'valid-typeof': ['error', { requireStringLiterals: true }],
-    'wrap-iife': [
-      'error',
-      'any',
-      { functionPrototypeMethods: true }
-    ],
-    'yield-star-spacing': ['error', 'both'],
     yoda: ['error', 'never'],
 
     'import/export': 'error',
@@ -636,16 +509,7 @@ const defaultConfig: ESLint.ConfigData = {
     'import/order': [
       'error',
       {
-        groups: [
-          'index',
-          'sibling',
-          'parent',
-          'internal',
-          'external',
-          'builtin',
-          'object',
-          'type'
-        ],
+        groups: ['index', 'sibling', 'parent', 'internal', 'external', 'builtin', 'object', 'type'],
         'newlines-between': 'always-and-inside-groups',
         warnOnUnassignedImports: false,
         alphabetize: {
@@ -654,9 +518,6 @@ const defaultConfig: ESLint.ConfigData = {
         }
       }
     ],
-
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': ['warn', { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }],
 
     'unicorn/custom-error-definition': 'error',
     'unicorn/no-keyword-prefix': 'error',

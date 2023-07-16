@@ -1,11 +1,10 @@
 {
-  "name": "@giveerr/eslint-config-react",
+  "name": "@giveerr/prettier-config",
   "version": "2.2.11",
-  "description": "giveer's ESLint-react config",
+  "description": "giveer's prettier config",
   "keywords": [
-    "eslint",
-    "eslintconfig",
-    "react"
+    "prettier",
+    "prettierconfig"
   ],
   "repository": "github:giveerr/eslint",
   "license": "MIT",
@@ -18,17 +17,12 @@
     "build": "sh ./../../scripts/build.sh",
     "clean": "sh ./../../scripts/clean.sh"
   },
-  "dependencies": {
-    "@giveerr/eslint-config-typescript": "*",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
-  },
   "devDependencies": {
-    "eslint": "^8.42.0"
+    "@types/prettier": "^2.7.2",
+    "prettier": "^2.8.8"
   },
   "peerDependencies": {
-    "eslint": ">=7.4.0"
+    "prettier": "^2.8.8"
   },
   "publishConfig": {
     "access": "public"

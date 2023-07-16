@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
+    "incremental": true,
     "module": "NodeNext",
     "moduleResolution": "Node",
     "paths": {
       "@giveerr": ["./packages/*/src"]
     },
     "sourceMap": true,
+    "strict": true,
     "strictNullChecks": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
   "exclude": ["node_modules"]
 }
